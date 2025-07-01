@@ -1,0 +1,26 @@
+
+  
+    
+
+create or replace transient table azdatabase.advwork_raw.fct_sales
+    
+
+    
+    as (
+
+select
+     product_key,
+    customer_key,
+    territory_key,
+    order_date,
+    
+    sum(order_quantity) as total_quantity,
+    sum(order_quantity * price) as total_revenue
+
+from azdatabase.advwork_raw.int_sales_with_details
+group by 1, 2, 3, 4
+    )
+;
+
+
+  

@@ -40,3 +40,13 @@ models:
         description: "Product price used to calculate revenue."
       - name: order_calendar_date
         description: "Normalized date from calendar dimension."
+  - name: int_sales_with_details_incremental
+    description: "Incremental version of sales with enriched customer and product details"
+    columns:
+      - name: order_number
+        tests:
+          - not_null
+          - unique
+      - name: revenue
+        tests:
+          - not_null
