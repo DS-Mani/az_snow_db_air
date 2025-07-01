@@ -1,1 +1,14 @@
 # DBT artifacts and build folders
+target/
+dbt_packages/
+logs/
+
+# Mac system files
+.DS_Store
+
+# Python cache and venv
+__pycache__/
+*.py[cod]
+.venv/
+.env/
+*.egg-info/
